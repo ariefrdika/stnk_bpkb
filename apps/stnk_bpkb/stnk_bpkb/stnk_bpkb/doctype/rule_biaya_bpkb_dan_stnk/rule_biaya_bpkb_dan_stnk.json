@@ -1,0 +1,147 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-07-24 10:15:00.932778",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "section_break_ex2q",
+  "disabled",
+  "type",
+  "vendor",
+  "item_code",
+  "product_type",
+  "product_color",
+  "territory",
+  "column_break_cclu",
+  "valid_from",
+  "valid_to",
+  "amount",
+  "coa"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "RULE-.MM.-.YYYY.-.#####"
+  },
+  {
+   "fieldname": "section_break_ex2q",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "BBN",
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "BBN\nBPKB\nSTNK",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vendor",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vendor",
+   "options": "Supplier",
+   "reqd": 1
+  },
+  {
+   "fieldname": "valid_from",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Valid From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "valid_to",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Valid To"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Item Code",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "territory",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Territory",
+   "options": "Territory",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "coa",
+   "fieldtype": "Link",
+   "label": "COA",
+   "options": "Account"
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disabled"
+  },
+  {
+   "fieldname": "column_break_cclu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "item_code.custom_product_type",
+   "fieldname": "product_type",
+   "fieldtype": "Data",
+   "label": "Product Type",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "item_code.custom_product_color",
+   "fieldname": "product_color",
+   "fieldtype": "Link",
+   "label": "Product Color",
+   "options": "Color",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-07 13:20:50.326107",
+ "modified_by": "Administrator",
+ "module": "Stnk Bpkb",
+ "name": "Rule Biaya BPKB dan STNK",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
